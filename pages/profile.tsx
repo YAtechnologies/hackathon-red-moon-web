@@ -1,6 +1,7 @@
 import { PencilSquareIcon } from "@heroicons/react/24/outline";
 import { Avatar, Button, Card } from "flowbite-react";
 import Link from "next/link";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 import RequestTabs from "../components/profile/RequestTabs";
 import ServiceCard from "../components/ServiceCard";
@@ -59,6 +60,7 @@ export default function Profile() {
           <RequestTabs />
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

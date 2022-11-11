@@ -2,6 +2,7 @@ import { PencilSquareIcon } from "@heroicons/react/24/outline";
 import { Avatar, Button, Card } from "flowbite-react";
 import Link from "next/link";
 import ClientRequestCard from "../components/ClientRequestCard";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 import RequestCard from "../components/RequestCard";
 
@@ -65,6 +66,7 @@ export default function Profile() {
           <ClientRequestCard status="canceled" />
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { TextInput } from "flowbite-react";
 import CategoriesFilter from "../../components/CategoriesFilter";
+import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import HorizontalServiceCard from "../../components/HorizontalServiceCard";
 import services from "../../utils/data/services";
@@ -35,6 +36,7 @@ export default function CategoryListingPage() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

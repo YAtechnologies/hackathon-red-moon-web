@@ -5,6 +5,7 @@ import { StarIcon } from "@heroicons/react/20/solid";
 import { RadioGroup } from "@headlessui/react";
 import RequestServiceModal from "../../components/services/RequestServiceModal";
 import { useRouter } from "next/router";
+import Footer from "../../components/Footer";
 
 const product = {
   name: "Professional Logo Design",
@@ -189,6 +190,7 @@ export default function ServicePage() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
