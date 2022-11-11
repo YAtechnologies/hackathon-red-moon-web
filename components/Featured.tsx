@@ -1,64 +1,82 @@
-import { BuildingLibraryIcon, ComputerDesktopIcon, CursorArrowRaysIcon, PaintBrushIcon, PencilIcon, PresentationChartLineIcon, SwatchIcon, TruckIcon, WrenchScrewdriverIcon } from "@heroicons/react/24/outline"
-import { Button, Card } from "flowbite-react"
+import {
+  BuildingLibraryIcon,
+  ComputerDesktopIcon,
+  CursorArrowRaysIcon,
+  PaintBrushIcon,
+  PencilIcon,
+  PresentationChartLineIcon,
+  SwatchIcon,
+  TruckIcon,
+  WrenchScrewdriverIcon,
+} from "@heroicons/react/24/outline";
+import { Button, Card } from "flowbite-react";
+import Link from "next/link";
 
 const services = [
   {
     id: 1,
-    name: 'Formations',
-    href: '#',
-    color: 'Black',
-    icon: BuildingLibraryIcon
+    name: "E-commerce Website developement",
+    href: "#",
+    image:
+      "https://cdn.shopify.com/s/files/1/0070/7032/files/ecommerce_website_development.jpg?v=1651557398&width=1024",
+    author: "Amine Chikh",
   },
   {
-    id: 1,
-    name: 'IT',
-    href: '#',
-    color: 'Black',
-    icon: ComputerDesktopIcon
+    id: 2,
+    name: "Professional Logo Design",
+    href: "#",
+    image:
+      "https://image.winudf.com/v2/image1/Y29tLmlmb2N1c2FwcHMubG9nb21ha2VyX3NjcmVlbl8wXzE1NDExODQzNzFfMDE1/screen-0.jpg?fakeurl=1&type=.webp",
+    author: "Mehdi Zerrouki",
   },
   {
-    id: 1,
-    name: 'Publicité',
-    href: '#',
-    color: 'Black',
-    icon: CursorArrowRaysIcon
+    id: 2,
+    name: "Social Media Management",
+    href: "#",
+    image:
+      "https://www.airwebsolutions.com/wp-content/uploads/2020/07/social-media-management.png",
+    author: "Ilham Mess",
   },
   {
-    id: 1,
-    name: 'Santé',
-    href: '#',
-    color: 'Black',
-    icon: TruckIcon
+    id: 2,
+    name: "Business Analyst",
+    href: "#",
+    image:
+      "https://www.simplilearn.com/ice9/free_resources_article_thumb/Who_is_a_Business_Data_Analyst.jpg",
+    author: "Ghiles Meriche",
   },
   {
-    id: 1,
-    name: 'Décoration',
-    href: '#',
-    color: 'Black',
-    icon: SwatchIcon
+    id: 2,
+    name: "Content Writer",
+    href: "#",
+    image:
+      "https://www.joshtalks.com/joshkosh/wp-content/uploads/2018/12/Content-writer-1068x561.jpg",
+    author: "Imene Kerdel",
   },
   {
-    id: 1,
-    name: 'Design',
-    href: '#',
-    color: 'Black',
-    icon: PaintBrushIcon
+    id: 2,
+    name: "Private English Teacher",
+    href: "#",
+    image:
+      "https://www.areadne.eu/wp-content/uploads/2020/06/english_learn_logo-750x350.jpg",
+    author: "Lyna Mahdjoub",
   },
   {
-    id: 1,
-    name: 'Réparation',
-    href: '#',
-    color: 'Black',
-    icon: WrenchScrewdriverIcon
+    id: 2,
+    name: "Accountant",
+    href: "#",
+    image:
+      "https://www.careeraddict.com/uploads/article/58250/illustration-accountant.jpg",
+    author: "Hani Cherif",
   },
   {
-    id: 1,
-    name: 'Finance',
-    href: '#',
-    color: 'Black',
-    icon: PresentationChartLineIcon
+    id: 2,
+    name: "Digital Marketing Manager",
+    href: "#",
+    image: "https://course-net.com/blog/wp-content/uploads/2022/09/7.jpeg",
+    author: "Lynda Fadel",
   },
-]
+];
 export default function Featured() {
   return (
     <div className="bg-white">
@@ -68,22 +86,26 @@ export default function Featured() {
         </h2>
       </div>
       <div className="mx-auto max-w-2xl pb-6 sm:px-6 lg:max-w-7xl lg:px-4">
-      <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+        <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
           {services.map((service, index) => (
-            <div  key={index} className="max-w-sm">
-            <Card imgSrc="https://flowbite.com/docs/images/blog/image-1.jpg">
-              <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                Web site developement
-              </h5>
-              <p className="font-normal text-gray-700 dark:text-gray-400">
-                Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
-              </p>
-              <Button>View more</Button>
-            </Card>
-          </div>
+            <div key={index} className="max-w-sm">
+              <Card imgSrc={service.image} className="featured-card">
+                {/* <img src={service.image??''}></img> */}
+                <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                  {service.name}
+                </h5>
+                <p className="font-normal text-gray-700 dark:text-gray-400">
+                  Here are the biggest enterprise technology acquisitions of
+                  2021 so far, in reverse chronological order.
+                </p>
+                <Link href={`/services/${service.id}`}>
+                  <Button>View more</Button>
+                </Link>
+              </Card>
+            </div>
           ))}
         </div>
-        </div>
+      </div>
     </div>
-  )
+  );
 }

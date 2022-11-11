@@ -1,61 +1,62 @@
-import { BuildingLibraryIcon, ComputerDesktopIcon, CursorArrowRaysIcon, PaintBrushIcon, PencilIcon, PresentationChartLineIcon, SwatchIcon, TruckIcon, WrenchScrewdriverIcon } from "@heroicons/react/24/outline"
+import { BeakerIcon, BuildingLibraryIcon, ComputerDesktopIcon, CursorArrowRaysIcon, LanguageIcon, PaintBrushIcon, PencilIcon, PhotoIcon, PlusCircleIcon, PresentationChartLineIcon, ScaleIcon, SwatchIcon, TruckIcon, WrenchScrewdriverIcon } from "@heroicons/react/24/outline"
+import Link from "next/link"
 
-const services = [
+const categories = [
   {
     id: 1,
-    name: 'Formations',
-    href: '#',
+    name: 'Training',
+    href: '/category/training',
     color: 'Black',
     icon: BuildingLibraryIcon
   },
   {
     id: 1,
-    name: 'IT',
-    href: '#',
+    name: 'Writing & Translation',
+    href: '/category/writing-translation',
     color: 'Black',
-    icon: ComputerDesktopIcon
+    icon: LanguageIcon
   },
   {
     id: 1,
-    name: 'Publicité',
-    href: '#',
+    name: 'Digital Marketing',
+    href: '/category/digital-marketing',
     color: 'Black',
     icon: CursorArrowRaysIcon
   },
   {
     id: 1,
-    name: 'Santé',
-    href: '#',
+    name: 'Health',
+    href: '/category/health',
     color: 'Black',
-    icon: TruckIcon
+    icon: PlusCircleIcon
   },
   {
     id: 1,
-    name: 'Décoration',
-    href: '#',
+    name: 'Content Creation',
+    href: '/category/content-creation',
     color: 'Black',
     icon: SwatchIcon
   },
   {
     id: 1,
-    name: 'Design',
-    href: '#',
+    name: 'Local & Artisanal Products',
+    href: '/category/local-artisanal-products',
     color: 'Black',
-    icon: PaintBrushIcon
-  },
-  {
-    id: 1,
-    name: 'Réparation',
-    href: '#',
-    color: 'Black',
-    icon: WrenchScrewdriverIcon
+    icon: PhotoIcon
   },
   {
     id: 1,
     name: 'Finance',
-    href: '#',
+    href: '/category/finance',
     color: 'Black',
     icon: PresentationChartLineIcon
+  },
+  {
+    id: 1,
+    name: 'Legal',
+    href: '/category/legal',
+    color: 'Black',
+    icon: ScaleIcon
   },
 ]
 export default function Categories() {
@@ -69,17 +70,19 @@ export default function Categories() {
       </div>
       <div className="mx-auto max-w-2xl pb-6 sm:px-6 lg:max-w-7xl lg:px-4">
       <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-          {services.map((service) => (
-            <div key={service.id} className="group relative flex flex-col justify-center items-center rounded-lg hover:bg-sky-100 ">
+          {categories.map((category) => (
+            <Link href={category.href} key={category.id}>
+            <div key={category.id} className="group relative flex flex-col justify-center items-center rounded-lg hover:bg-sky-100 py-2 ">
               <div className="flex justify-center">
-                <service.icon className="h-24 w-24" aria-hidden="true" ></service.icon>
+                <category.icon className="h-16 w-16" aria-hidden="true" ></category.icon>
               </div>
               <div className="mt-2">
                 <span className="text-lg font-semibold">
-                  {service.name}
+                  {category.name}
                 </span>
                 </div>
             </div>
+            </Link>
           ))}
         </div>
         </div>
