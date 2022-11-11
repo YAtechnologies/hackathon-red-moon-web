@@ -1,17 +1,3 @@
-import {
-  BuildingLibraryIcon,
-  ComputerDesktopIcon,
-  CursorArrowRaysIcon,
-  PaintBrushIcon,
-  PencilIcon,
-  PresentationChartLineIcon,
-  SwatchIcon,
-  TruckIcon,
-  WrenchScrewdriverIcon,
-} from "@heroicons/react/24/outline";
-import { Button, Card } from "flowbite-react";
-import Link from "next/link";
-
 const services = [
   {
     id: 1,
@@ -93,34 +79,5 @@ const services = [
       "Digital Marketing is rerally important in todays business, we'll help you with it",
   },
 ];
-export default function Featured() {
-  return (
-    <div className="bg-white">
-      <div className="mx-auto max-w-7xl py-8 px-4 sm:px-6 lg:flex lg:items-center lg:justify-between lg:py-16 lg:px-8">
-        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-          <span className="block">Featured Services</span>
-        </h2>
-      </div>
-      <div className="mx-auto max-w-2xl pb-6 sm:px-6 lg:max-w-7xl lg:px-4">
-        <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
-          {services.map((service, index) => (
-            <div key={index} className="max-w-sm">
-              <Card imgSrc={service.image} className="featured-card">
-                {/* <img src={service.image??''}></img> */}
-                <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                  {service.name}
-                </h5>
-                <p className="font-normal text-gray-700 dark:text-gray-400">
-                  {service.description}
-                </p>
-                <Link href={`/services/${service.id}`}>
-                  <Button>View more</Button>
-                </Link>
-              </Card>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
+
+export default services;

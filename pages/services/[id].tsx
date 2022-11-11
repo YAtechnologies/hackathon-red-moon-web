@@ -7,7 +7,7 @@ import RequestServiceModal from "../../components/services/RequestServiceModal";
 import { useRouter } from "next/router";
 
 const product = {
-  name: "E-commerce Web developement",
+  name: "Professional Logo Design",
   price: "$192",
   href: "#",
   breadcrumbs: [
@@ -28,7 +28,7 @@ const product = {
       alt: "Model wearing plain gray basic tee.",
     },
     {
-      src: "https://cdn.shopify.com/s/files/1/0070/7032/files/ecommerce_website_development.jpg?v=1651557398&width=1024",
+      src: "https://image.winudf.com/v2/image1/Y29tLmlmb2N1c2FwcHMubG9nb21ha2VyX3NjcmVlbl8wXzE1NDExODQzNzFfMDE1/screen-0.jpg?fakeurl=1&type=.webp",
       // src: 'https://tailwindui.com/img/ecommerce-images/product-page-02-featured-product-shot.jpg',
       alt: "Model wearing plain white basic tee.",
     },

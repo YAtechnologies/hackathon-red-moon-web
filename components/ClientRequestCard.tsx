@@ -1,3 +1,4 @@
+import { ChatBubbleOvalLeftIcon } from "@heroicons/react/20/solid";
 import { Button, Card } from "flowbite-react";
 import Link from "next/link";
 
@@ -15,29 +16,28 @@ export default function ClientRequestCard(props: RequestTabsProps) {
       <p className="font-normal text-gray-700 dark:text-gray-400">
         Hi I&rsquo;ma Ahmed I need a logo and a banner for my company
       </p>
-      {status === "pending" && (
-        <div className="flex justify-end">
-          <p className="w-sm text-yellow-400 mr-2">Pending</p>
-        </div>
-      )}
+      <div className="flex justify-between">
+        <Link href="/chat">
+          <Button>
+            <ChatBubbleOvalLeftIcon width={16} /> &nbsp;Contact Provider
+          </Button>
+        </Link>
+        {status === "pending" && (
+          <p className="w-sm text-yellow-400 mr-4 pt-2">Pending</p>
+        )}
 
-      {status === "in_progress" && (
-        <div className="flex justify-end">
+        {status === "in_progress" && (
           <p className="w-sm text-green-400 mr-2">In progress</p>
-        </div>
-      )}
+        )}
 
-      {status === "declined" && (
-        <div className="flex justify-end">
+        {status === "declined" && (
           <p className="w-sm text-orange-600 mr-2">Declined</p>
-        </div>
-      )}
+        )}
 
-      {status === "canceled" && (
-        <div className="flex justify-end">
+        {status === "canceled" && (
           <p className="w-sm text-orange-600 mr-2">Canceled</p>
-        </div>
-      )}
+        )}
+      </div>
     </Card>
   );
 }

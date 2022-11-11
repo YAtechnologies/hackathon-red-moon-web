@@ -3,16 +3,8 @@ import { Avatar, Button, Card } from "flowbite-react";
 import Link from "next/link";
 import Header from "../components/Header";
 import RequestTabs from "../components/profile/RequestTabs";
-import RequestCard from "../components/RequestCard";
-
-const service = {
-  id: 1,
-  name: "E-commerce Website developement",
-  href: "#",
-  image:
-    "https://cdn.shopify.com/s/files/1/0070/7032/files/ecommerce_website_development.jpg?v=1651557398&width=1024",
-  author: "Amine Chikh",
-};
+import ServiceCard from "../components/ServiceCard";
+import services from "../utils/data/services";
 
 export default function Profile() {
   return (
@@ -56,43 +48,14 @@ export default function Profile() {
           </div>
         </div>
         <div className="shadow-md rounded-lg m-4 p-6">
-          <h3 className="text-lg font-semibold">Services</h3>
+          <h3 className="text-xl font-semibold mb-8">My Services</h3>
           <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
-            <div className="max-w-sm">
-              <Card imgSrc={service.image} className="featured-card">
-                {/* <img src={service.image??''}></img> */}
-                <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                  {service.name}
-                </h5>
-                <p className="font-normal text-gray-700 dark:text-gray-400">
-                  Here are the biggest enterprise technology acquisitions of
-                  2021 so far, in reverse chronological order.
-                </p>
-                <Link href={`/services/${service.id}`}>
-                  <Button>Edit</Button>
-                </Link>
-              </Card>
-            </div>
-            <div className="max-w-sm">
-              <Card imgSrc={service.image} className="featured-card">
-                {/* <img src={service.image??''}></img> */}
-                <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                  {service.name}
-                </h5>
-                <p className="font-normal text-gray-700 dark:text-gray-400">
-                  Here are the biggest enterprise technology acquisitions of
-                  2021 so far, in reverse chronological order.
-                </p>
-                <Link href={`/services/${service.id}`}>
-                  <Button>Edit</Button>
-                </Link>
-              </Card>
-            </div>
+            <ServiceCard service={services[0]} />
+            <ServiceCard service={services[1]} />
           </div>
         </div>
         <div className="shadow-md rounded-lg m-4 p-6">
           <h3 className="text-lg font-semibold mb-2">Requests</h3>
-          <RequestCard />
           <RequestTabs />
         </div>
       </div>

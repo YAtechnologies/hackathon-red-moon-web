@@ -1,8 +1,9 @@
-import Categories from '../components/Categories';
-import Header from '../components/Header';
-import Hero from '../components/Hero';
+import Categories from "../components/Categories";
+import Header from "../components/Header";
+import Hero from "../components/Hero";
 import { Alert } from "flowbite-react";
-import Featured from '../components/Featured';
+import Featured from "../components/Featured";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Header></Header>
       <Categories></Categories>
       <Featured></Featured>
+      <Footer></Footer>
     </div>
-  )
+  );
 }
